@@ -38,7 +38,7 @@ int main ()
 //	/* example 2, answer = [1, 5] */
 //	vector<int> arr = {5, 7, 11, 4, 8, 13};
 //	int target = 20;
-//
+
 //	/* example 3, answer = [0, 2] */
 //	vector<int> arr = {-2, 6, 7, -3};
 //	int target = 5;
