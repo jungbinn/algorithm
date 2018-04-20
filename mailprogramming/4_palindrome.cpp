@@ -9,39 +9,39 @@ using namespace std;
 
 bool palindrome (int n)
 {
-	if (n < 0)  return false;
+    if (n < 0)  return false;
 
-	/* Split given number into digits. */
-	vector<int> digits;
-	while (n > 0)
-	{
-		int digit = n % 10;
-		n /= 10;
-		digits.push_back(digit);
-	}
+    /* Split given number into digits. */
+    vector<int> digits;
+    while (n > 0)
+    {
+        int digit = n % 10;
+        n /= 10;
+        digits.push_back(digit);
+    }
 
-	/* Compare each digits. */
-	int size = digits.size();
-	for (int i = 0; i < size / 2; i++)
-	{	
-		int front = digits[i];
-		int back = digits[size - 1 - i];
-		if (front != back)
-			return false;
-	}
-	return true;
+    /* Compare each digits. */
+    int size = digits.size();
+    for (int i = 0; i < size / 2; i++)
+    {    
+        int front = digits[i];
+        int back = digits[size - 1 - i];
+        if (front != back)
+            return false;
+    }
+    return true;
 }
 
 int main ()
 {
-	int n;
-	cin >> n;
-	
-	bool isPalindrome = palindrome (n);
-	if (isPalindrome)
-		cout << "True" << endl;
-	else
-		cout << "False" << endl;
+    int n;
+    cin >> n;
+    
+    bool isPalindrome = palindrome (n);
+    if (isPalindrome)
+        cout << "True" << endl;
+    else
+        cout << "False" << endl;
 
-	return 0;
+    return 0;
 }

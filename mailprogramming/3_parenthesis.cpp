@@ -9,32 +9,32 @@ using namespace std;
 
 void parenthesis (int num, int open, int close, string s, vector<string> *list)
 {
-	/* completed, push to the list */
-	if (close == num)
-	{
-		(*list).push_back (s);
-		return;
-	}
+    /* completed, push to the list */
+    if (close == num)
+    {
+        (*list).push_back (s);
+        return;
+    }
 
-	/* can add a opening parenthesis */
-	if (open < num)
-		parenthesis (num, open + 1, close, s + "(", list);
+    /* can add a opening parenthesis */
+    if (open < num)
+        parenthesis (num, open + 1, close, s + "(", list);
 
-	/* can add a closing parenthesis */
-	if (close < open)
-		parenthesis (num, open, close + 1, s + ")", list);
+    /* can add a closing parenthesis */
+    if (close < open)
+        parenthesis (num, open, close + 1, s + ")", list);
 }
 
 int main ()
 {
-	int num;
-	cin >> num;
+    int num;
+    cin >> num;
 
-	vector<string> list;
-	parenthesis (num, 0, 0, "", &list);
+    vector<string> list;
+    parenthesis (num, 0, 0, "", &list);
 
-	for (int i; i < list.size(); i++)
-		cout << list[i] << endl;
+    for (int i; i < list.size(); i++)
+        cout << list[i] << endl;
 
-	return 0;
+    return 0;
 }

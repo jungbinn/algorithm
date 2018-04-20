@@ -8,19 +8,19 @@ using namespace std;
 
 int fibonacci (int a, int b, int n, int sum)
 {
-	if (b > n)
-		return sum;
+    if (b > n)
+        return sum;
 
-	if (b % 2 == 0)
-		sum += b;
+    if (b % 2 == 0)
+        sum += b;
 
-	return fibonacci (b, a + b, n, sum);
+    return fibonacci (b, a + b, n, sum);
 }
 
 int main ()
 {
-	int N;
-	cin >> N;
-	cout << fibonacci (0, 1, N, 0);
-	return 0;
+    int N;
+    cin >> N;
+    cout << fibonacci (0, 1, N, 0);
+    return 0;
 }
