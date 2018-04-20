@@ -35,13 +35,13 @@ int main ()
     vector<int> arr = {2, 5, 6, 1, 10};
     int target = 8;
 
-//    /* example 2, answer = [1, 5] */
-//    vector<int> arr = {5, 7, 11, 4, 8, 13};
-//    int target = 20;
-//
-//    /* example 3, answer = [0, 2] */
-//    vector<int> arr = {-2, 6, 7, -3};
-//    int target = 5;
+//  /* example 2, answer = [1, 5] */
+//  vector<int> arr = {5, 7, 11, 4, 8, 13};
+//  int target = 20;
+
+//  /* example 3, answer = [0, 2] */
+//  vector<int> arr = {-2, 6, 7, -3};
+//  int target = 5;
 
     tuple<int, int> answer = sumIndex (arr, target);
     cout << "[" << get<0>(answer) << ", " << get<1>(answer) << "]" << endl;
