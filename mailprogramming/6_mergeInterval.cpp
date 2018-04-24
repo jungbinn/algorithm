@@ -34,5 +34,6 @@ vector<struct interval> mergeInterval(vector<struct interval> intervals)
 		else
 			merged.push_back (intervals[i]);
 	}
+
 	return merged;
 }
