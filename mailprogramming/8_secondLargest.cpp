@@ -1,28 +1,35 @@
 /* 정수 배열(int array)이 주어지면 두 번째로 큰 값을 프린트하시오. */
 
 #include <vector>
-#include <algorithm>
+#include <climits>
 
 using namespace std;
 
-void swap (int *a, int *b) 
+void secondLargest (vector<int> numbers)
 {
-	int temp = *a;
-	*a = *b;
-	*b = temp;
-}
+	int first = INT_MIN;
+	int second = INT_MIN;
 
-int secondLargest (vector<int> numbers)
-{
-	int first = 0;
-	int second = 0;
+	/* Corner case 1. */
+	if (numbers.size() < 2) {
+		cout << "두 번째로 큰 값은 없습니다." << endl;
+		return;
+	}
 
 	for (int i = 0; i < numbers.size(); i++) {
-		if (numbers[i] > second) {
-			second = numbers[i];
-			if (second > first) 
-				swap (&first, &second);
+		if (numbers[i] > first) {
+			second = first;
+			first = numbers[i];
 		}
+		else if (second < numbers[i] && numbers[i] < first)
+			second = numbers[i];
 	}
-	return second;
+
+	/* Corner case 2. */
+	if (second == INT_MIN) {
+		cout << "두 번째로 큰 값은 없습니다." << endl;
+		return;
+	}
+
+	cout << second << endl;
 }
